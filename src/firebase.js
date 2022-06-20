@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, set } from "firebase/database"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -9,6 +10,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyAdQqHo2Hw6gAwFm0vTexkzicCykMZ7cGo",
   authDomain: "tribu-ff872.firebaseapp.com",
+  databaseURL: "https://tribu-ff872-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "tribu-ff872",
   storageBucket: "tribu-ff872.appspot.com",
   messagingSenderId: "220387369572",
@@ -17,5 +19,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebase = initializeApp(firebaseConfig);
+const analytics = getAnalytics(firebase);
+const database = getDatabase(firebase);
+
+export {firebase, analytics, database, ref, set};
