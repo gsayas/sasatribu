@@ -1,34 +1,12 @@
+import './FindMatches.css';
 import { useEffect, useState } from 'react';
-import * as ReactDOM from 'react-dom/client';
 import Hammer from 'hammerjs'
+import data from '../mocks/matches.json';
+
+console.log(data)
 
 const FindMatches = () => {
-    const [matches, setMatches] = useState([
-        {
-            id: 1,
-            name: 'Anakasha',
-            lastName: 'Lopez',
-            age: '6',
-            languages: ['en', 'es'],
-            country: 'ES'
-        },
-        {
-            id: 2,
-            name: 'Antonia',
-            lastName: 'Messi',
-            age: '2',
-            languages: ['es'],
-            country: 'AR'
-        },
-        {
-            id: 3,
-            name: 'Illan',
-            lastName: 'Perez',
-            age: '3',
-            languages: ['es'],
-            country: 'ES'
-        }
-    ])
+    const [matches, setMatches] = useState(JSON.parse(JSON.stringify(data)).mocks)
     const [currentMatch, setCurrentMatch] = useState(0)
 
     useEffect(() => {
@@ -50,11 +28,11 @@ const FindMatches = () => {
     })
 
     const renderMatch = (match) => {
-        console.log(match)
-        return <div key={match.id}>
+        return <div key={match.id} className='match-card'>
                     <pre>
                         <span>{match.name}</span>
                         <span>{match.age}</span>
+                        <img src={`${match.picture}`} />
                     </pre>
                 </div>
     }

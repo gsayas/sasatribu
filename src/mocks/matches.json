@@ -1,0 +1,39 @@
+{
+    "mocks": [
+        {
+            "id": 1,
+            "name": "Anakasha",
+            "lastname": "Lopez",
+            "age": 6,
+            "languages": [
+                "en",
+                "de",
+                "es"
+            ],
+            "country": "ES",
+            "picture": "pics/anakasha.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Mei",
+            "lastname": "Sayas",
+            "age": 2,
+            "languages": [
+                "es"
+            ],
+            "country": "CO",
+            "picture": "pics/mei.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Izar",
+            "lastname": "Perez",
+            "age": 3,
+            "languages": [
+                "es"
+            ],
+            "country": "ES",
+            "picture": "pics/izar.jpeg"
+        }
+    ]
+}
