@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import Hammer from 'hammerjs'
 
 const FindMatches = () => {
@@ -32,18 +32,17 @@ const FindMatches = () => {
     const [currentMatch, setCurrentMatch] = useState(0)
 
     useEffect(() => {
-        console.log('mounting')
         const currentMatchContainer = document.querySelector('.current-match');
-        const root = ReactDOM.createRoot(currentMatchContainer);
-
-        root.render(renderMatch(matches.at(currentMatch)))
         
-        
-        var mc = new Hammer(currentMatchContainer);
+        const mc = new Hammer(currentMatchContainer);
         mc.on("panleft panright", function(ev) {
 
             if(ev.type == 'panleft'){
-                console.log('reject!')
+                console.log('rejected!')
+            }
+
+            if(ev.type == 'panright'){
+                console.log('liked!')
             }
 
             showNextMatch();
@@ -70,7 +69,7 @@ const FindMatches = () => {
 
     return <div className='find-matches'>
         <h1>Tribu matching!</h1>
-        <div className='current-match'></div>
+        <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
     </div>
 
 }
