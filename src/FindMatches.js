@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import Hammer from 'hammerjs'
 
 const FindMatches = () => {
     const [matches, setMatches] = useState([
@@ -27,22 +29,48 @@ const FindMatches = () => {
             country: 'ES'
         }
     ])
+    const [currentMatch, setCurrentMatch] = useState(0)
 
     useEffect(() => {
         console.log('mounting')
+        const currentMatchContainer = document.querySelector('.current-match');
+        const root = ReactDOM.createRoot(currentMatchContainer);
+
+        root.render(renderMatch(matches.at(currentMatch)))
+        
+        
+        var mc = new Hammer(currentMatchContainer);
+        mc.on("panleft panright", function(ev) {
+
+            if(ev.type == 'panleft'){
+                console.log('reject!')
+            }
+
+            showNextMatch();
+        });
+    })
+
+    const renderMatch = (match) => {
+        console.log(match)
+        return <div key={match.id}>
+                    <pre>
+                        <span>{match.name}</span>
+                        <span>{match.age}</span>
+                    </pre>
+                </div>
     }
-    )
+
+    const showNextMatch = () => {
+        if(currentMatch != matches.length-1){
+            setCurrentMatch(currentMatch + 1)
+        }else{
+            setCurrentMatch(0)
+        }
+    }
 
     return <div className='find-matches'>
         <h1>Tribu matching!</h1>
-        {matches.map((match) =>
-            <div key={match.id}>
-                <pre>
-                    <span>{match.name}</span>
-                    <span>{match.age}</span>
-                </pre>
-            </div>
-        )}
+        <div className='current-match'></div>
     </div>
 
 }
