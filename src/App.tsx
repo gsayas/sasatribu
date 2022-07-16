@@ -1,4 +1,5 @@
 import './App.css';
+import FindMatches from './FindMatches';
 import UserProfile from './UserProfile';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <header>
       </header>
       <body>
-        <UserProfile />
+        <FindMatches />
       </body>
     </div>
   );
