@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from 'react-loading';
-import {database, ref, set} from './firebase';
+import {database, ref, set} from '../firebase';
 
 class UserProfile extends React.Component {
 

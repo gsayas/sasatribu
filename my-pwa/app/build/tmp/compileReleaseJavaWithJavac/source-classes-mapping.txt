@@ -1,0 +1,8 @@
+io/github/gsayas/twa/DelegationService.java
+ io.github.gsayas.twa.DelegationService
+io/github/gsayas/twa/Application.java
+ io.github.gsayas.twa.Application
+io/github/gsayas/twa/BuildConfig.java
+ io.github.gsayas.twa.BuildConfig
+io/github/gsayas/twa/LauncherActivity.java
+ io.github.gsayas.twa.LauncherActivity

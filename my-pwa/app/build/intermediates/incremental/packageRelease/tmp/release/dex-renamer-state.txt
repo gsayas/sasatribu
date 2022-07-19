@@ -1,0 +1,4 @@
+#Sun Jul 17 12:23:37 CEST 2022
+base.0=/Users/giovannysayas/mobile/sasatribu/my-pwa/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

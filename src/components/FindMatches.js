@@ -30,9 +30,9 @@ const FindMatches = () => {
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
                     <pre>
+                        <img src={match.picture} />
                         <span>{match.name}</span>
                         <span>{match.age}</span>
-                        <img src={`${match.picture}`} />
                     </pre>
                 </div>
     }
