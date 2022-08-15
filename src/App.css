@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .user-profile{
@@ -12,4 +14,12 @@
 .user-profile button {
   display: flex;
   margin-top: 10px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+h1 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

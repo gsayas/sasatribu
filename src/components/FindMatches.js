@@ -7,6 +7,9 @@ import {
     DefaultTheme,
     StyleReset,
     Button,
+    Image,
+    Div,
+    Text
   } from "react-atomize";
 
 console.log(data)
@@ -36,9 +39,9 @@ const FindMatches = () => {
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
             <pre>
-                <img src={match.picture} />
-                <span>{match.name}</span>
-                <span>{match.age}</span>
+                <Image src={match.picture} h="11rem" w="11rem" />
+                <Div>{match.name}</Div>
+                <Div>{match.age}</Div>
             </pre>
         </div>
     }
@@ -59,17 +62,21 @@ const FindMatches = () => {
         },
         rounded: {
             ...DefaultTheme.rounded,
-            brandRadius: "20px"
+            brandRadius: "50%"
         }
     };
 
     return <div className='find-matches'>
         <ThemeProvider theme={theme}>
             <StyleReset />
-            <h1>Tribu matching!</h1>
+            <Text tag="h1" textSize="display1" m={{ b: "4rem" }}>Tribu matching!</Text>
             <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
-            <Button bg="brand800" rounded="brandRadius">
-                Submit
+            <Button 
+                bg="brand800" 
+                rounded="brandRadius" 
+                h="4rem"
+                w="4rem">
+                Discover
             </Button>
         </ThemeProvider>
     </div>

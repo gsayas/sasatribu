@@ -7,9 +7,9 @@ function App() {
     <div className="App">
       <header>
       </header>
-      <body>
+      <div className='body'>
         <FindMatches />
-      </body>
+      </div>
     </div>
   );
 }
