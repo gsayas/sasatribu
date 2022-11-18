@@ -2,15 +2,12 @@ import './FindMatches.css';
 import { useEffect, useState } from 'react';
 import Hammer from 'hammerjs'
 import data from '../mocks/matches.json';
-import {
-    ThemeProvider,
-    DefaultTheme,
-    StyleReset,
-    Button,
-    Image,
-    Div,
-    Text
-  } from "react-atomize";
+import {Card, Button} from 'react-bootstrap';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 console.log(data)
 
@@ -24,11 +21,11 @@ const FindMatches = () => {
         const mc = new Hammer(currentMatchContainer);
         mc.on("panleft panright", function (ev) {
 
-            if (ev.type == 'panleft') {
+            if (ev.type === 'panleft') {
                 console.log('rejected!')
             }
 
-            if (ev.type == 'panright') {
+            if (ev.type === 'panright') {
                 console.log('liked!')
             }
 
@@ -38,48 +35,45 @@ const FindMatches = () => {
 
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
-            <pre>
-                <Image src={match.picture} h="11rem" w="11rem" />
-                <Div>{match.name}</Div>
-                <Div>{match.age}</Div>
-            </pre>
+            <Card>
+                <Card.Img variant="top" src={match.picture} />
+                <Card.Body>
+                    <Card.Title>{match.name}</Card.Title>
+                    <Card.Text>{match.age}</Card.Text>
+                </Card.Body>
+            </Card>
         </div>
     }
 
     const showNextMatch = () => {
-        if (currentMatch != matches.length - 1) {
+        if (currentMatch !== matches.length - 1) {
             setCurrentMatch(currentMatch + 1)
         } else {
             setCurrentMatch(0)
         }
     }
 
-    const theme = {
-        ...DefaultTheme,
-        colors: {
-            ...DefaultTheme.colors,
-            brand800: "#671de1"
-        },
-        rounded: {
-            ...DefaultTheme.rounded,
-            brandRadius: "50%"
-        }
-    };
-
-    return <div className='find-matches'>
-        <ThemeProvider theme={theme}>
-            <StyleReset />
-            <Text tag="h1" textSize="display1" m={{ b: "4rem" }}>Tribu matching!</Text>
-            <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
-            <Button 
-                bg="brand800" 
-                rounded="brandRadius" 
-                h="4rem"
-                w="4rem">
-                Discover
-            </Button>
-        </ThemeProvider>
-    </div>
+    return <Container fluid>
+        <Row>
+            <Col>
+                <h1>Tribu matching!</h1>
+            </Col>
+        </Row>
+        <Row>    
+            <Col>
+                <div className='find-matches d-flex justify-content-center text-center'>                    
+                    <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
+                </div>
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+                <Button>
+                    Discover
+                </Button>
+            </Col>    
+        </Row>
+        </Container>
 
 }
 

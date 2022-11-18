@@ -1,6 +1,7 @@
 import React from 'react';
 import Loading from 'react-loading';
 import {database, ref, set} from '../firebase';
+import Button from 'react-bootstrap/Button';
 
 class UserProfile extends React.Component {
 
@@ -75,9 +76,9 @@ class UserProfile extends React.Component {
                             onChange={this.handleInputChange}
                         />
                         </div>:''}
-                        <button type="submit" disabled={isSavingForm}>
+                        <Button type="submit" disabled={isSavingForm}>
                             Submit
-                        </button>
+                        </Button>
                     </div>
                 </form>}
             </div>

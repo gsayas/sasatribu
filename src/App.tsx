@@ -1,6 +1,6 @@
 import './App.css';
 import FindMatches from './components/FindMatches';
-//import UserProfile from './components/UserProfile';
+import UserProfile from './components/UserProfile';
 
 function App() {
   return (
