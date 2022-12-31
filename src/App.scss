@@ -1,12 +1,6 @@
-.App {
+.App, .user-profile {
   text-align: center;
   display: flex;
-  justify-content: center;
-}
-
-.user-profile{
-  display: flex;
-  text-align: center;
   justify-content: center;
 }
 
@@ -14,10 +8,6 @@
 .user-profile button {
   display: flex;
   margin-top: 10px;
-}
-
-img {
-  border-radius: 50%;
 }
 
 h1 {

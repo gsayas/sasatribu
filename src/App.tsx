@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import FindMatches from './components/FindMatches';
 import UserProfile from './components/UserProfile';
 

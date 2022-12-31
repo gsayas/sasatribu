@@ -1,4 +1,4 @@
-import './FindMatches.css';
+import './FindMatches.scss';
 import { useEffect, useState } from 'react';
 import Hammer from 'hammerjs'
 import data from '../mocks/matches.json';
@@ -61,7 +61,7 @@ const FindMatches = () => {
         </Row>
         <Row>    
             <Col>
-                <div className='find-matches d-flex justify-content-center text-center'>                    
+                <div className='find-matches'>                    
                     <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
                 </div>
             </Col>
