@@ -1,15 +1,19 @@
-.App, .user-profile {
+.App,
+.user-profile {
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
-.user-profile input, 
+.user-profile input,
 .user-profile button {
   display: flex;
   margin-top: 10px;
 }
 
 h1 {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
+// @import "../node_modules/bootstrap/scss/bootstrap";

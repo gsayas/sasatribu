@@ -7,6 +7,7 @@ import {Card, Button} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Stack from 'react-bootstrap/Stack';
 
 
 console.log(data)
@@ -67,11 +68,14 @@ const FindMatches = () => {
             </Col>
         </Row>
         <Row>
-            <Col>
-                <Button>
-                    Discover
+            <Stack direction="horizontal" className='main-menu' gap={3}>
+                <div className="bg-light border">First item</div>
+                <Button variant="link" className="play-button" onClick={() => {alert('click!')}}>
+                    <img alt="discover" src="../../horse.svg" />
+                    <span>Discover</span>
                 </Button>
-            </Col>    
+                <div className="bg-light border">Third item</div>
+            </Stack>
         </Row>
         </Container>
 
