@@ -18,21 +18,59 @@ const FindMatches = () => {
 
     useEffect(() => {
         const currentMatchContainer = document.querySelector('.current-match');
-
-        const mc = new Hammer(currentMatchContainer);
-        mc.on("panleft panright", function (ev) {
-
-            if (ev.type === 'panleft') {
-                console.log('rejected!')
-            }
-
-            if (ev.type === 'panright') {
-                console.log('liked!')
-            }
-
-            showNextMatch();
-        });
-    })
+        let xDown = null;
+      
+        currentMatchContainer.addEventListener('touchstart', handleTouchStart);
+        currentMatchContainer.addEventListener('touchmove', handleTouchMove);
+        currentMatchContainer.addEventListener('touchend', handleTouchEnd);
+      
+        function handleTouchStart(evt) {
+          xDown = evt.touches[0].clientX;
+        }
+      
+        function handleTouchMove(evt) {
+          if (!xDown) {
+            return;
+          }
+      
+          const xDiff = xDown - evt.touches[0].clientX;
+      
+          if (xDiff > 0) {
+            // Swipe left
+            currentMatchContainer.classList.add('swipe-left');
+          } else {
+            // Swipe right
+            currentMatchContainer.classList.add('swipe-right');
+          }
+        }
+      
+        function handleTouchEnd(evt) {
+          if (!xDown) {
+            return;
+          }
+      
+          const xDiff = xDown - evt.changedTouches[0].clientX;
+      
+          if (xDiff > 0) {
+            // Swipe left
+            showNextMatch('left');
+          } else {
+            // Swipe right
+            showNextMatch('right');
+          }
+      
+          // Reset the swipe classes
+          currentMatchContainer.classList.remove('swipe-left', 'swipe-right');
+          xDown = null;
+        }
+      
+        return () => {
+          currentMatchContainer.removeEventListener('touchstart', handleTouchStart);
+          currentMatchContainer.removeEventListener('touchmove', handleTouchMove);
+          currentMatchContainer.removeEventListener('touchend', handleTouchEnd);
+        };
+      }, [currentMatch, matches]);
+      
 
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
@@ -46,13 +84,30 @@ const FindMatches = () => {
         </div>
     }
 
-    const showNextMatch = () => {
-        if (currentMatch !== matches.length - 1) {
-            setCurrentMatch(currentMatch + 1)
-        } else {
-            setCurrentMatch(0)
+    const showNextMatch = (direction) => {
+        const currentMatchContainer = document.querySelector('.current-match');
+        const matchCard = currentMatchContainer.querySelector('.match-card');
+      
+        // Add the appropriate transform value based on the swipe direction
+        if (direction === 'left') {
+          matchCard.style.transform = 'translateX(-100%)';
+        } else if (direction === 'right') {
+          matchCard.style.transform = 'translateX(100%)';
         }
+      
+        // Wait for the transition to complete before updating the current match
+        setTimeout(() => {
+          if (currentMatch !== matches.length - 1) {
+            setCurrentMatch(currentMatch + 1);
+          } else {
+            setCurrentMatch(0);
+          }
+      
+          // Reset the transform value to 0 after the transition completes
+          matchCard.style.transform = 'translateX(0)';
+        }, 300); // This value should match the transition duration in your CSS
     }
+      
 
     return <Container fluid>
         <Row>
