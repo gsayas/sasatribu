@@ -75,13 +75,15 @@ const FindMatches = () => {
 
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
-            <Card>
+          <div className='gallery'>
+            <Card className='gallery-item'>
                 <Card.Img variant="top" src={match.picture} />
                 <Card.Body>
                     <Card.Title>{match.name}</Card.Title>
                     <Card.Text>{match.age}</Card.Text>
                 </Card.Body>
             </Card>
+            </div>
         </div>
     }
 
