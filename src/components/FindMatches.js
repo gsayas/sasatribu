@@ -118,11 +118,13 @@ const FindMatches = () => {
         <Container>
             <Row className='header justify-content-md-center'>
                 <Col xs lg="2">
+                  <Button variant="link" className="profile" onClick={() => {alert('click!')}}>
                     <img 
                       alt="profile" 
                       src="../../profile-picture.jpg"
                       className='profile-picture'
                     />
+                  </Button>
                 </Col>
                 <Col xs lg="4">
                     <h1>
@@ -130,11 +132,9 @@ const FindMatches = () => {
                     </h1>
                 </Col>
                 <Col xs lg="2">
-                    <img 
-                      alt="profile" 
-                      src="../../profile-picture.jpg"
-                      className='profile-picture'
-                    />
+                    <Button variant="link" className="notifications" onClick={() => {alert('click!')}}>
+                        <img alt="notifications" src="../../notification-icon.svg" />
+                    </Button>
                 </Col>
             </Row>
 
@@ -149,12 +149,12 @@ const FindMatches = () => {
             <Row className='footer justify-content-md-center'>
               <Col>
                 <Stack direction="horizontal" className='main-menu' gap={3}>
-                    <div className="bg-light border">First item</div>
+                    <div className="bg-light border"></div>
                     <Button variant="link" className="play-button" onClick={() => {alert('click!')}}>
                         <img alt="discover" src="../../horse.svg" />
                         <span>Discover</span>
                     </Button>
-                    <div className="bg-light border">Third item</div>
+                    <div className="bg-light border"></div>
                 </Stack>
               </Col>
             </Row>
