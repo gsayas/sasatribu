@@ -365,10 +365,10 @@ library {
   maven_library {
     groupId: "com.google.androidbrowserhelper"
     artifactId: "androidbrowserhelper"
-    version: "2.3.0"
+    version: "2.4.0"
   }
   digests {
-    sha256: "\023jx}?\224u\273\034w\323\337\352\026\273G\367FqQ$\304\004\215/j H\360Vu\307"
+    sha256: "Lk(\036\2312\232\216w0\220c\332\0369\323\312B\345\234\276\355|A\027lg\\o^\024B"
   }
 }
 library_dependencies {

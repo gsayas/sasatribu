@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/giovannysayas/mobile/sasatribu/my-pwa/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "/Users/giovannysayas/Documents/personalProjects/sasatribu/my-pwa/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/Users/giovannysayas/.gradle/caches/transforms-2/files-2.1/b76183546e9802347e4b2c9dd5e9649b/browser-1.4.0/res/values-en-rIN/values-en-rIN.xml",

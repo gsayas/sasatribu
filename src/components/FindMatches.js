@@ -1,6 +1,6 @@
 import './FindMatches.scss';
 import { useEffect, useState } from 'react';
-import Hammer from 'hammerjs'
+// import Hammer from 'hammerjs'
 import data from '../mocks/matches.json';
 import {Card, Button} from 'react-bootstrap';
 
@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
+// import Image from 'react-bootstrap/Image'
 
 
 console.log(data)
@@ -109,30 +110,52 @@ const FindMatches = () => {
     }
       
 
-    return <Container fluid>
-        <Row>
-            <Col>
-                <h1>Tribu matching!</h1>
-            </Col>
-        </Row>
-        <Row>    
-            <Col>
-                <div className='find-matches'>                    
-                    <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
-                </div>
-            </Col>
-        </Row>
-        <Row>
-            <Stack direction="horizontal" className='main-menu' gap={3}>
-                <div className="bg-light border">First item</div>
-                <Button variant="link" className="play-button" onClick={() => {alert('click!')}}>
-                    <img alt="discover" src="../../horse.svg" />
-                    <span>Discover</span>
-                </Button>
-                <div className="bg-light border">Third item</div>
-            </Stack>
-        </Row>
-        </Container>
+    return <div className='background'>
+        <Container>
+            <Row className='header justify-content-md-center'>
+                <Col xs lg="2">
+                    <img 
+                      alt="profile" 
+                      src="../../profile-picture.jpg"
+                      className='profile-picture'
+                    />
+                </Col>
+                <Col xs lg="4">
+                    <h1>
+                      <span className='section-title'>Discover</span>
+                    </h1>
+                </Col>
+                <Col xs lg="2">
+                    <img 
+                      alt="profile" 
+                      src="../../profile-picture.jpg"
+                      className='profile-picture'
+                    />
+                </Col>
+            </Row>
+
+            <Row className='justify-content-md-center'>    
+                <Col>
+                    <div className='find-matches'>                    
+                        <div className='current-match'>{renderMatch(matches.at(currentMatch))}</div>
+                    </div>
+                </Col>
+            </Row>
+
+            <Row className='justify-content-md-center'>
+              <Col>
+                <Stack direction="horizontal" className='main-menu' gap={3}>
+                    <div className="bg-light border">First item</div>
+                    <Button variant="link" className="play-button" onClick={() => {alert('click!')}}>
+                        <img alt="discover" src="../../horse.svg" />
+                        <span>Discover</span>
+                    </Button>
+                    <div className="bg-light border">Third item</div>
+                </Stack>
+              </Col>
+            </Row>
+          </Container>
+        </div>
 
 }
 

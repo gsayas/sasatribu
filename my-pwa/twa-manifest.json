@@ -15,35 +15,27 @@
   "iconUrl": "https://gsayas.github.io/logo512.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "/Users/giovannysayas/mobile/sasatribu/my-pwa/secrets/android.keystore",
+    "path": "/Users/giovannysayas/Documents/personalProjects/sasatribu/my-pwa/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "4",
-  "appVersionCode": 4,
+  "appVersionName": "1",
+  "appVersionCode": 1,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://gsayas.github.io/manifest.json",
   "fallbackType": "customtabs",
-  "features": {
-    "locationDelegation": {
-      "enabled": true
-    }
-  },
+  "features": {},
   "alphaDependencies": {
     "enabled": false
   },
-  "enableSiteSettingsShortcut": false,
+  "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
   "fullScopeUrl": "https://gsayas.github.io/",
   "minSdkVersion": 19,
   "orientation": "default",
-  "fingerprints": [
-    {
-      "value": "D0:3F:8D:48:D3:2E:B1:08:60:12:17:76:2A:EC:43:41:66:23:89:0E:9C:4C:53:29:DC:C8:A2:3A:E7:DA:49:6A"
-    }
-  ],
+  "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "4"
+  "appVersion": "1"
 }

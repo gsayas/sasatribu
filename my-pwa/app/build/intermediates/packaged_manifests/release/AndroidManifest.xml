@@ -23,14 +23,14 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.gsayas.twa"
-    android:versionCode="4"
-    android:versionName="4" >
+    android:versionCode="1"
+    android:versionName="1" >
 
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="31" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <queries>
         <intent>
@@ -48,6 +48,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/appName"
+        android:manageSpaceActivity="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         <meta-data
@@ -60,6 +61,11 @@
             android:name="twa_generator"
             android:value="@string/generatorApp" />
 
+        <activity android:name="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity" >
+            <meta-data
+                android:name="android.support.customtabs.trusted.MANAGE_SPACE_URL"
+                android:value="@string/launchUrl" />
+        </activity>
         <activity
             android:name="io.github.gsayas.twa.LauncherActivity"
             android:alwaysRetainTaskState="true"
@@ -154,15 +160,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name="com.google.androidbrowserhelper.locationdelegation.PermissionRequestActivity" />
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+        <activity android:name="com.google.androidbrowserhelper.trusted.NotificationPermissionRequestActivity" />
     </application>
 
 </manifest>
