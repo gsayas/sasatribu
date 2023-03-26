@@ -6,10 +6,6 @@
 }
 
 .find-matches {
-  .card {
-    border-radius: 20px;
-  }
-
   .gallery-item-img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -102,6 +98,11 @@
   height: 100%;
   object-fit: cover;
   /* This ensures that the image fills the container without distorting it */
+}
+
+.gallery-text {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 13.5px 54px rgba(0, 0, 0, 0.1);
 }
 
 .header {

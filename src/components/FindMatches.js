@@ -75,18 +75,18 @@ const FindMatches = () => {
 
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
-          <div className='gallery'>
-            <div >
-              <div className='gallery-item'>
-                <img className='gallery-item-img' src={match.picture} />
+            <div>
+              <div className='gallery'>
+                  <div className='gallery-item'>
+                    <img className='gallery-item-img' src={match.picture} />
+                  </div>
               </div>
-                <Card.Body>
-                    <Card.Title>{match.name}</Card.Title>
-                    <Card.Text>{match.age}</Card.Text>
-                </Card.Body>
+              <div className='gallery-text'>
+                    <div>{match.name}</div>
+                    <div>{match.age}</div>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
     }
 
     const showNextMatch = (direction) => {
