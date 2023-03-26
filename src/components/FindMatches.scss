@@ -8,13 +8,13 @@
 .find-matches {
   .card {
     border-radius: 20px;
-    width: 320px;
   }
 
-  .card-img-top {
+  .gallery-item-img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 318px;
+    height: 500px;
   }
 }
 
@@ -82,8 +82,10 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
+  width: 318px;
+  height: 500px;
 }
 
 .gallery-item {
@@ -100,4 +102,13 @@
   height: 100%;
   object-fit: cover;
   /* This ensures that the image fills the container without distorting it */
+}
+
+.header {
+  margin-bottom: 6vh;
+  padding-top: 4vh;
+}
+
+.footer {
+  padding-top: 4vh;
 }

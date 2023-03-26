@@ -76,13 +76,15 @@ const FindMatches = () => {
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
           <div className='gallery'>
-            <Card className='gallery-item'>
-                <Card.Img variant="top" src={match.picture} />
+            <div >
+              <div className='gallery-item'>
+                <img className='gallery-item-img' src={match.picture} />
+              </div>
                 <Card.Body>
                     <Card.Title>{match.name}</Card.Title>
                     <Card.Text>{match.age}</Card.Text>
                 </Card.Body>
-            </Card>
+            </div>
             </div>
         </div>
     }
@@ -144,7 +146,7 @@ const FindMatches = () => {
                 </Col>
             </Row>
 
-            <Row className='justify-content-md-center'>
+            <Row className='footer justify-content-md-center'>
               <Col>
                 <Stack direction="horizontal" className='main-menu' gap={3}>
                     <div className="bg-light border">First item</div>
