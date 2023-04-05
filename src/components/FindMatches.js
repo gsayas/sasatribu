@@ -2,7 +2,7 @@ import './FindMatches.scss';
 import { useEffect, useState } from 'react';
 // import Hammer from 'hammerjs'
 import data from '../mocks/matches.json';
-import {Card, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -82,8 +82,11 @@ const FindMatches = () => {
                   </div>
               </div>
               <div className='gallery-text'>
-                    <div>{match.name}</div>
-                    <div>{match.age}</div>
+                    <span>{match.name}, </span>
+                    <span className='gallery-text-age'>{match.age} yo</span>
+                    <div className='gallery-text-description'>
+                      {match.description}
+                    </div>
               </div>
             </div>
           </div>

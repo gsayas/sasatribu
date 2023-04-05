@@ -11,7 +11,8 @@
                 "es"
             ],
             "country": "ES",
-            "picture": "pics/anakasha.jpeg"
+            "picture": "pics/anakasha.jpeg",
+            "description": "Hi, I'm Anakasha! I'm a 6-year-old who loves learning new languages and exploring the world around me."
         },
         {
             "id": 2,
@@ -22,7 +23,8 @@
                 "es"
             ],
             "country": "CO",
-            "picture": "pics/mei.jpeg"
+            "picture": "pics/mei.jpeg",
+            "description": "Hola, I'm Mei! I'm a curious 2-year-old who loves to play and discover new things every day."
         },
         {
             "id": 3,
@@ -33,7 +35,8 @@
                 "es"
             ],
             "country": "ES",
-            "picture": "pics/izar.jpeg"
+            "picture": "pics/izar.jpeg",
+            "description": "¡Hola! I'm Izar, a 3-year-old who loves spending time with my family and exploring the world around me."
         }
     ]
 }
