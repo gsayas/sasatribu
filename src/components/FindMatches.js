@@ -17,6 +17,8 @@ const FindMatches = () => {
     const [matches, setMatches] = useState(JSON.parse(JSON.stringify(data)).mocks)
     const [currentMatch, setCurrentMatch] = useState(0)
     const [isExpanded, setIsExpanded] = useState(false);
+    const [galleryTextPosition, setGalleryTextPosition] = useState('initial');
+
 
 
     useEffect(() => {
@@ -83,7 +85,7 @@ const FindMatches = () => {
                     <img className='gallery-item-img' src={match.picture} />
                   </div>
               </div>
-              <div className='gallery-text'>
+              <div className={`gallery-text ${galleryTextPosition}`}>
                     <span>{match.name}, </span>
                     <span className='gallery-text-age'>{match.age} yo</span>
                     <div className='gallery-text-description'>
@@ -101,7 +103,9 @@ const FindMatches = () => {
 
     const toggleExpanded = () => {
       setIsExpanded(!isExpanded);
+      setGalleryTextPosition(isExpanded ? 'initial' : 'upward');
     };
+    
     
 
     const showNextMatch = (direction) => {
