@@ -16,6 +16,8 @@ console.log(data)
 const FindMatches = () => {
     const [matches, setMatches] = useState(JSON.parse(JSON.stringify(data)).mocks)
     const [currentMatch, setCurrentMatch] = useState(0)
+    const [isExpanded, setIsExpanded] = useState(false);
+
 
     useEffect(() => {
         const currentMatchContainer = document.querySelector('.current-match');
@@ -75,7 +77,7 @@ const FindMatches = () => {
 
     const renderMatch = (match) => {
         return <div key={match.id} className='match-card'>
-            <div>
+            <div className='gallery-container'>
               <div className='gallery'>
                   <div className='gallery-item'>
                     <img className='gallery-item-img' src={match.picture} />
@@ -85,12 +87,22 @@ const FindMatches = () => {
                     <span>{match.name}, </span>
                     <span className='gallery-text-age'>{match.age} yo</span>
                     <div className='gallery-text-description'>
-                      {match.description}
+                      {match.description}                      
+                    </div>
+                    <div 
+                      className={isExpanded ? "visible-gallery-text" : "hidden-gallery-text"}
+                    >
+                      some extra content
                     </div>
               </div>
-            </div>
+            </div>            
           </div>
     }
+
+    const toggleExpanded = () => {
+      setIsExpanded(!isExpanded);
+    };
+    
 
     const showNextMatch = (direction) => {
         const currentMatchContainer = document.querySelector('.current-match');
@@ -158,6 +170,14 @@ const FindMatches = () => {
                         <span>Discover</span>
                     </Button>
                     <div className="bg-light border"></div>
+                    <Button
+                      className="expand-button"
+                      variant="outline-primary"
+                      size="sm"
+                      onClick={toggleExpanded}
+                    >
+                      {isExpanded ? "Collapse" : "Expand"}
+                    </Button>
                 </Stack>
               </Col>
             </Row>

@@ -80,10 +80,24 @@
   height: 500px;
 }
 
+.expand-collapse-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .gallery-item {
   position: relative;
   padding-bottom: 100%;
   /* This sets the aspect ratio of the image container */
+}
+
+.hidden-gallery-text {
+  display: none;
+}
+
+.visible-gallery-text {
+  display: block;
 }
 
 .gallery-item img {
