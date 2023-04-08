@@ -93,11 +93,23 @@
 }
 
 .hidden-gallery-text {
+  opacity: 0;
   display: none;
 }
 
 .visible-gallery-text {
+  opacity: 1;
   display: block;
+}
+
+.extra-gallery-text {
+  background: #ffffff;
+  width: 100%;
+  transition: opacity 300ms ease-in-out;
+  transition: display 50ms ease-in-out;
+  top: 100%;
+  left: 0;
+  position: absolute;
 }
 
 .gallery-item img {
@@ -111,6 +123,7 @@
 }
 
 .gallery-text {
+  position: relative;
   background: #ffffff;
   text-align: left;
   font-family: "Poppins";
@@ -145,7 +158,7 @@
 
   &.upward {
     transition: transform 0.3s ease-in-out;
-    transform: translateY(-50%);
+    transform: translateY(-253px);
   }
 }
 

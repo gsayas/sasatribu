@@ -92,8 +92,23 @@ const FindMatches = () => {
                       {match.description}                      
                     </div>
                     <div 
-                      className={isExpanded ? "visible-gallery-text" : "hidden-gallery-text"}
+                      className={`extra-gallery-text ${isExpanded ? "visible-gallery-text" : "hidden-gallery-text"}`}
                     >
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
+                      some extra content
                       some extra content
                     </div>
               </div>
