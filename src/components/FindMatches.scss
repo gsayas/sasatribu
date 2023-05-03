@@ -90,8 +90,20 @@
 
 .expand-collapse-button {
   position: absolute;
-  top: -31px;
-  right: 7px;
+  top: -46px;
+  right: 1px;
+  border: none;
+  background-color: #757575;
+  width: 46px;
+  height: 46px;
+}
+
+.expanded-gallery-text {
+  background-image: url("../../public/arrow-up.svg");
+}
+
+.collapsed-gallery-text {
+  background-image: url("../../public/arrow-up.svg");
 }
 
 .gallery-item {

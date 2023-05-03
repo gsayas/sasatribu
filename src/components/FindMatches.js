@@ -16,6 +16,7 @@ console.log(data)
 const FindMatches = () => {
     const [matches, setMatches] = useState(JSON.parse(JSON.stringify(data)).mocks)
     const [currentMatch, setCurrentMatch] = useState(0)
+    const [expandedGalleryText, setExpandedGalleryText] = useState(false)
 
 
 
@@ -99,13 +100,15 @@ const FindMatches = () => {
       }, [currentMatch, matches]);
 
     function CustomToggle({ children, eventKey }) {
-      const decoratedOnClick = useAccordionButton(eventKey);
+      const decoratedOnClick = useAccordionButton(eventKey, () => 
+        setExpandedGalleryText(!expandedGalleryText)
+      );
     
       return (
         <button
           type="button"
           onClick={decoratedOnClick}
-          className="expand-collapse-button"
+          className={'rounded-circle expand-collapse-button'}
         >
           {children}
         </button>
@@ -138,7 +141,9 @@ const FindMatches = () => {
                             {match.description}                      
                           </div>
                         </div>
-                        <CustomToggle eventKey="0">P</CustomToggle>
+                        <CustomToggle eventKey="0">
+                          {!expandedGalleryText ? <img src="../../arrow-up.svg" /> : <img src="../../arrow-down.svg" />}
+                        </CustomToggle>
                       </Card.Header>
                     </Card>
                   </Accordion>
