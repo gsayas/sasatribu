@@ -89,6 +89,7 @@ const FindMatches = () => {
       
           // Reset the swipe classes
           currentMatchContainer.classList.remove('swipe-left', 'swipe-right');
+          setExpandedGalleryText(false);
           xDown = null;
         }
       
@@ -129,6 +130,24 @@ const FindMatches = () => {
                         <Card.Body>
                           <div>{`Link Address: extra`}</div>
                           <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
+                          <div>{`Link Address: extra`}</div>
+                          <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
+                          <div>{`Link Address: extra`}</div>
+                          <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
+                          <div>{`Link Address: extra`}</div>
+                          <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
+                          <div>{`Link Address: extra`}</div>
+                          <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
                           <div>{`lat: extra`}</div>
                           <div>{`lon: extra`}</div>
                         </Card.Body>
