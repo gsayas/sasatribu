@@ -3,6 +3,11 @@
 .match-card {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.match-card .card {
+  flex-direction: column-reverse;
 }
 
 .find-matches {
@@ -12,6 +17,8 @@
     width: 318px;
     height: 500px;
   }
+
+  padding-bottom: 140px;
 }
 
 .match-card {
@@ -93,20 +100,18 @@
 }
 
 .hidden-gallery-text {
-  opacity: 0;
-  display: none;
+  max-height: 0;
 }
 
 .visible-gallery-text {
-  opacity: 1;
-  display: block;
+  max-height: 500px;
 }
 
 .extra-gallery-text {
   background: #ffffff;
   width: 100%;
-  transition: opacity 300ms ease-in-out;
-  transition: display 50ms ease-in-out;
+  transition: max-height 300ms ease-in-out;
+  overflow: hidden;
   top: 100%;
   left: 0;
   position: absolute;
@@ -123,7 +128,8 @@
 }
 
 .gallery-text {
-  position: relative;
+  position: absolute;
+  bottom: -140px;
   background: #ffffff;
   text-align: left;
   font-family: "Poppins";

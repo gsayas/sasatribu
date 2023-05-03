@@ -2,13 +2,13 @@ import './FindMatches.scss';
 import { useEffect, useState } from 'react';
 // import Hammer from 'hammerjs'
 import data from '../mocks/matches.json';
-import {Button} from 'react-bootstrap';
+import {Button, Accordion, Card} from 'react-bootstrap';
+import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
-// import Image from 'react-bootstrap/Image'
 
 
 console.log(data)
@@ -16,18 +16,40 @@ console.log(data)
 const FindMatches = () => {
     const [matches, setMatches] = useState(JSON.parse(JSON.stringify(data)).mocks)
     const [currentMatch, setCurrentMatch] = useState(0)
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [galleryTextPosition, setGalleryTextPosition] = useState('initial');
 
 
 
     useEffect(() => {
-        const currentMatchContainer = document.querySelector('.current-match');
+        const currentMatchContainer = document.querySelector('.current-match img');
         let xDown = null;
       
         currentMatchContainer.addEventListener('touchstart', handleTouchStart);
         currentMatchContainer.addEventListener('touchmove', handleTouchMove);
         currentMatchContainer.addEventListener('touchend', handleTouchEnd);
+
+        const showNextMatch = (direction) => {
+          const currentMatchContainer = document.querySelector('.current-match');
+          const matchCard = currentMatchContainer.querySelector('.match-card');
+        
+          // Add the appropriate transform value based on the swipe direction
+          if (direction === 'left') {
+            matchCard.style.transform = 'translateX(-100%)';
+          } else if (direction === 'right') {
+            matchCard.style.transform = 'translateX(100%)';
+          }
+        
+          // Wait for the transition to complete before updating the current match
+          setTimeout(() => {
+            if (currentMatch !== matches.length - 1) {
+              setCurrentMatch(currentMatch + 1);
+            } else {
+              setCurrentMatch(0);
+            }
+        
+            // Reset the transform value to 0 after the transition completes
+            matchCard.style.transform = 'translateX(0)';
+          }, 300); // This value should match the transition duration in your CSS
+      }
       
         function handleTouchStart(evt) {
           xDown = evt.touches[0].clientX;
@@ -75,6 +97,20 @@ const FindMatches = () => {
           currentMatchContainer.removeEventListener('touchend', handleTouchEnd);
         };
       }, [currentMatch, matches]);
+
+    function CustomToggle({ children, eventKey }) {
+      const decoratedOnClick = useAccordionButton(eventKey);
+    
+      return (
+        <button
+          type="button"
+          style={{ backgroundColor: 'pink' }}
+          onClick={decoratedOnClick}
+        >
+          {children}
+        </button>
+      );
+    }  
       
 
     const renderMatch = (match) => {
@@ -82,71 +118,35 @@ const FindMatches = () => {
             <div className='gallery-container'>
               <div className='gallery'>
                   <div className='gallery-item'>
-                    <img className='gallery-item-img' src={match.picture} />
+                    <img className='gallery-item-img' src={match.picture} alt='gallery item' />
                   </div>
-              </div>
-              <div className={`gallery-text ${galleryTextPosition}`}>
-                    <span>{match.name}, </span>
-                    <span className='gallery-text-age'>{match.age} yo</span>
-                    <div className='gallery-text-description'>
-                      {match.description}                      
+                  <Accordion className='gallery-text'>
+                <Card>    
+                        
+                  <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                      <div>{`Link Address: extra`}</div>
+                      <div>{`community board: extra`}</div>
+                      <div>{`lat: extra`}</div>
+                      <div>{`lon: extra`}</div>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                  <Card.Header>
+                    <div>
+                      <span>{match.name}, </span>
+                      <span className='gallery-text-age'>{match.age} yo</span>
+                      <div className='gallery-text-description'>
+                        {match.description}                      
+                      </div>
                     </div>
-                    <div 
-                      className={`extra-gallery-text ${isExpanded ? "visible-gallery-text" : "hidden-gallery-text"}`}
-                    >
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                      some extra content
-                    </div>
-              </div>
+                    <CustomToggle eventKey="0">Click me!</CustomToggle>
+                  </Card.Header>
+                </Card>
+              </Accordion>
+              </div>             
             </div>            
           </div>
-    }
-
-    const toggleExpanded = () => {
-      setIsExpanded(!isExpanded);
-      setGalleryTextPosition(isExpanded ? 'initial' : 'upward');
-    };
-    
-    
-
-    const showNextMatch = (direction) => {
-        const currentMatchContainer = document.querySelector('.current-match');
-        const matchCard = currentMatchContainer.querySelector('.match-card');
-      
-        // Add the appropriate transform value based on the swipe direction
-        if (direction === 'left') {
-          matchCard.style.transform = 'translateX(-100%)';
-        } else if (direction === 'right') {
-          matchCard.style.transform = 'translateX(100%)';
-        }
-      
-        // Wait for the transition to complete before updating the current match
-        setTimeout(() => {
-          if (currentMatch !== matches.length - 1) {
-            setCurrentMatch(currentMatch + 1);
-          } else {
-            setCurrentMatch(0);
-          }
-      
-          // Reset the transform value to 0 after the transition completes
-          matchCard.style.transform = 'translateX(0)';
-        }, 300); // This value should match the transition duration in your CSS
-    }
-      
+    }     
 
     return <div className='background'>
         <Container>
@@ -189,14 +189,6 @@ const FindMatches = () => {
                         <span>Discover</span>
                     </Button>
                     <div className="bg-light border"></div>
-                    <Button
-                      className="expand-button"
-                      variant="outline-primary"
-                      size="sm"
-                      onClick={toggleExpanded}
-                    >
-                      {isExpanded ? "Collapse" : "Expand"}
-                    </Button>
                 </Stack>
               </Col>
             </Row>
