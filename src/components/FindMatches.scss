@@ -8,6 +8,7 @@
 
 .match-card .card {
   flex-direction: column-reverse;
+  border: none;
 }
 
 .find-matches {
@@ -89,8 +90,8 @@
 
 .expand-collapse-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -31px;
+  right: 7px;
 }
 
 .gallery-item {
@@ -99,22 +100,9 @@
   /* This sets the aspect ratio of the image container */
 }
 
-.hidden-gallery-text {
-  max-height: 0;
-}
-
-.visible-gallery-text {
-  max-height: 500px;
-}
-
 .extra-gallery-text {
   background: #ffffff;
   width: 100%;
-  transition: max-height 300ms ease-in-out;
-  overflow: hidden;
-  top: 100%;
-  left: 0;
-  position: absolute;
 }
 
 .gallery-item img {
@@ -129,7 +117,7 @@
 
 .gallery-text {
   position: absolute;
-  bottom: -140px;
+  bottom: -90px;
   background: #ffffff;
   text-align: left;
   font-family: "Poppins";
@@ -157,14 +145,12 @@
     margin-top: 8px;
   }
 
-  &.initial {
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(0);
-  }
-
-  &.upward {
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-253px);
+  .card-header {
+    padding: 0;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    color: #000000;
+    border-bottom: none;
   }
 }
 
@@ -214,4 +200,6 @@
 
 .footer {
   padding-top: 4vh;
+  position: fixed;
+  bottom: 9px;
 }

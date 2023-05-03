@@ -104,8 +104,8 @@ const FindMatches = () => {
       return (
         <button
           type="button"
-          style={{ backgroundColor: 'pink' }}
           onClick={decoratedOnClick}
+          className="expand-collapse-button"
         >
           {children}
         </button>
@@ -121,28 +121,27 @@ const FindMatches = () => {
                     <img className='gallery-item-img' src={match.picture} alt='gallery item' />
                   </div>
                   <Accordion className='gallery-text'>
-                <Card>    
-                        
-                  <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                      <div>{`Link Address: extra`}</div>
-                      <div>{`community board: extra`}</div>
-                      <div>{`lat: extra`}</div>
-                      <div>{`lon: extra`}</div>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                  <Card.Header>
-                    <div>
-                      <span>{match.name}, </span>
-                      <span className='gallery-text-age'>{match.age} yo</span>
-                      <div className='gallery-text-description'>
-                        {match.description}                      
-                      </div>
-                    </div>
-                    <CustomToggle eventKey="0">Click me!</CustomToggle>
-                  </Card.Header>
-                </Card>
-              </Accordion>
+                    <Card>    
+                      <Accordion.Collapse eventKey="0">
+                        <Card.Body>
+                          <div>{`Link Address: extra`}</div>
+                          <div>{`community board: extra`}</div>
+                          <div>{`lat: extra`}</div>
+                          <div>{`lon: extra`}</div>
+                        </Card.Body>
+                      </Accordion.Collapse>
+                      <Card.Header>
+                        <div>
+                          <span>{match.name}, </span>
+                          <span className='gallery-text-age'>{match.age} yo</span>
+                          <div className='gallery-text-description'>
+                            {match.description}                      
+                          </div>
+                        </div>
+                        <CustomToggle eventKey="0">P</CustomToggle>
+                      </Card.Header>
+                    </Card>
+                  </Accordion>
               </div>             
             </div>            
           </div>
