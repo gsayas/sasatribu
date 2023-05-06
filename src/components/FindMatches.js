@@ -193,12 +193,24 @@ const FindMatches = () => {
             <Row className='footer justify-content-md-center'>
               <Col>
                 <Stack direction="horizontal" className='main-menu' gap={3}>
-                    <div className="bg-light border"></div>
+                    <button
+                      type="button"
+                      className={'rounded-circle friends-button'}
+                    >
+                      <img alt="discover" src="../../friends.svg" />
+                      <span>Friends</span>
+                    </button>
                     <Button variant="link" className="play-button" onClick={() => {alert('click!')}}>
                         <img alt="discover" src="../../horse.svg" />
                         <span>Discover</span>
                     </Button>
-                    <div className="bg-light border"></div>
+                    <button
+                      type="button"
+                      className={'rounded-circle friends-button'}
+                    >
+                      <img alt="discover" src="../../friends.svg" />
+                      <span>Connect</span>
+                    </button>
                 </Stack>
               </Col>
             </Row>

@@ -227,7 +227,27 @@
 }
 
 .footer {
-  padding-top: 4vh;
-  position: fixed;
-  bottom: 9px;
+  .friends-button {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 7px;
+    /* identical to box height, or 70% */
+
+    text-align: center;
+
+    /* Gray */
+
+    color: #757575;
+
+    span {
+      margin-top: 6px;
+      margin-left: 7px;
+    }
+  }
 }
