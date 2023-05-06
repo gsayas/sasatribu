@@ -5,12 +5,16 @@
             "name": "Anakasha",
             "lastname": "Lopez",
             "age": 6,
+            "birthDate": "2015-04-22",
             "languages": [
                 "en",
                 "de",
                 "es"
             ],
             "country": "ES",
+            "playLocation": "playground",
+            "playTime": "afternoon",
+            "interests": "learning new languages, exploring the world",
             "picture": "pics/anakasha.jpeg",
             "description": "Hi, I'm Anakasha! I'm a 6-year-old who loves learning new languages and exploring the world around me."
         },
@@ -19,10 +23,14 @@
             "name": "Mei",
             "lastname": "Sayas",
             "age": 2,
+            "birthDate": "2019-01-10",
             "languages": [
                 "es"
             ],
             "country": "CO",
+            "playLocation": "backyard",
+            "playTime": "morning",
+            "interests": "playing, discovering new things",
             "picture": "pics/mei.jpeg",
             "description": "Hola, I'm Mei! I'm a curious 2-year-old who loves to play and discover new things every day."
         },
@@ -31,10 +39,14 @@
             "name": "Izar",
             "lastname": "Perez",
             "age": 3,
+            "birthDate": "2018-03-02",
             "languages": [
                 "es"
             ],
             "country": "ES",
+            "playLocation": "park",
+            "playTime": "evening",
+            "interests": "spending time with family, exploring the world",
             "picture": "pics/izar.jpeg",
             "description": "¡Hola! I'm Izar, a 3-year-old who loves spending time with my family and exploring the world around me."
         }

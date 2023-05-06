@@ -1,0 +1,21 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+.info-item {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 128%;
+  display: flex;
+  justify-content: space-between;
+
+  .name {
+    letter-spacing: 0.5px;
+    color: #000000;
+  }
+
+  .value {
+    text-align: right;
+    color: #757575;
+  }
+}

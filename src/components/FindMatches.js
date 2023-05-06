@@ -10,6 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 
+import InfoItem from './InfoItem.js';
+
 
 console.log(data)
 
@@ -128,28 +130,13 @@ const FindMatches = () => {
                     <Card>    
                       <Accordion.Collapse eventKey="0">
                         <Card.Body>
-                          <div>{`Link Address: extra`}</div>
-                          <div>{`community board: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
-                          <div>{`Link Address: extra`}</div>
-                          <div>{`community board: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
-                          <div>{`Link Address: extra`}</div>
-                          <div>{`community board: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
-                          <div>{`Link Address: extra`}</div>
-                          <div>{`community board: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
-                          <div>{`Link Address: extra`}</div>
-                          <div>{`community board: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
-                          <div>{`lat: extra`}</div>
-                          <div>{`lon: extra`}</div>
+                          <ul className='extra-info'>
+                            <InfoItem name="BIRTH DATE" value={match.birthDate}/>
+                            <InfoItem name="LANGUAGES" value={match.languages}/>
+                            <InfoItem name="PLAY LOCATION" value={match.playLocation}/>
+                            <InfoItem name="PLAY TIME" value={match.playTime}/>
+                            <InfoItem name="INTERESTS" value={match.interests}/>
+                          </ul>
                         </Card.Body>
                       </Accordion.Collapse>
                       <Card.Header>

@@ -164,6 +164,22 @@
     color: #000000;
     border-bottom: none;
   }
+
+  .card-body {
+    padding: 0;
+    padding-top: 15px;
+  }
+
+  .extra-info {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      height: 40px;
+      border-top: 0.5px solid rgb(117, 117, 117, 0.2);
+      padding: 12px 0px;
+    }
+  }
 }
 
 .header {
